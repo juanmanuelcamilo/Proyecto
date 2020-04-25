@@ -39,12 +39,13 @@ class Item extends Component {
     this.props.onremove(this.props.id)
   }//Mando a llamar a la funcion on remove, solo necesitamos el id
 
-  render () {//html que vamos a utilizar para renderizar nuestros elementos, aca utilizo las props
+  render() {//html que vamos a utilizar para renderizar nuestros elementos, aca utilizo las props
     return ( //que estoy mandando desde list
-      <div className = 'item'>
-        <div className = 'image'><img src={'../img/' + this.state.image} width='100%' alt='nada'/></div>
-        <div className = 'title'>{this.state.title}</div>
-        <div className = 'rating'>
+      // usar clase style     border-bottom: 1px solid green;
+      <div className='item'>
+        <div className='image'><img src={'../img/' + this.state.image} width='100%' alt='nada'/></div>
+        <div className='title'>{this.state.title}</div>
+        <div className='rating'>
           <p>
             {//Iteracion de las estrellas
               this.state.stars.map(x =>
@@ -63,7 +64,7 @@ class Item extends Component {
           </select>
         </div>
         <div className = 'actions'>
-          <button className = 'correrBoton' onClick = {this.onremove}>Eliminar</button>
+          <button className='correrBoton' onClick={this.onremove}>Eliminar</button>
         </div>
       </div>
     );

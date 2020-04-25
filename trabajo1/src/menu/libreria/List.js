@@ -8,6 +8,7 @@ import './estilos/Item.css'
 
 function List (props) {
   return (
+    // col-md-3
     <div className = 'list'>
       {//Abrimos llaves porque JSX es declarativo y necesitamos hacer procedimientos que nos regresen un valor
         props.items.map(item => //función de mappeo

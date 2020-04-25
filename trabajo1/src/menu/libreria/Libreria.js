@@ -10,11 +10,11 @@ class Libreria extends Component {
     super(props);
     this.state = {
       books: [//Este arreglo solo lo usamos para agregar o quitar elementos
-        {id:0, rating:4, title: 'Harry Potter', image: 'libro01.jpg'},
-        {id:1, rating:3, title: 'The shining', image: 'libro02.jpg'},
-        {id:2, rating:5, title: 'Código Da Vinci', image: 'libro03.jpg'},
-        {id:3, rating:5, title: 'El principito', image: 'libro04.jpg'},
-        {id:4, rating:5, title: 'Sobrenatural', image: 'libro05.jpg'},
+        { id: 0, rating: 4, title: 'Harry Potter', image: 'libro01.jpg' },
+        { id: 1, rating: 3, title: 'The shining', image: 'libro02.jpg' },
+        { id: 2, rating: 5, title: 'Código Da Vinci', image: 'libro03.jpg' },
+        { id: 3, rating: 5, title: 'El principito', image: 'libro04.jpg' },
+        { id: 4, rating: 5, title: 'Sobrenatural', image: 'libro05.jpg' },
       ],
       copyBooks: []//Este arreglo lo usamos para hacer la busqueda de los libros
     };
@@ -39,13 +39,13 @@ class Libreria extends Component {
     temp.push(item)
     //Luego hacemos un push de temp para insertar todo el elemento en mi arreglo temporal de item
 
-    this.setState({books: [...temp]})
+    this.setState({ books: [...temp] })
     //Por último nos hace falta regresarlo al state haciendo una copia de temp
     this.initBooks();//Contiene solo los 5 libros
   }
 
   onSearch = (query) => {//query es como una keyword, pero abarca una cantidad de palabras mas amplia
-    if(query === '') {//si el buscador esta vacío, se muestran todos los libros (initBooks)
+    if (query === '') {//si el buscador esta vacío, se muestran todos los libros (initBooks)
       // this.setState({copyBooks: [...this.state.books]});
       this.initBooks();//es lo mismo esto que lo de arriba
     } else {//si contiene texto, creamos un arreglo temporal de mis libros
@@ -57,7 +57,7 @@ class Libreria extends Component {
           res.push(item);//Pusheo el resultado a let res haciendo una copia e este
         }
       });
-      this.setState({copyBooks: [...res]});//Actualizo el estado de copyBooks 
+      this.setState({ copyBooks: [...res] });//Actualizo el estado de copyBooks 
     }
   }
 
@@ -79,19 +79,19 @@ class Libreria extends Component {
     temp[index].image = item.image;
     temp[index].rating = item.rating;
 
-    this.setState({books: [...temp]});
+    this.setState({ books: [...temp] });
     this.initBooks();
   }
 
-  render () {
+  render() {
     return (
-      <div className = 'libreria'>
+      <div className='libreria'>
         <Menu
           title='Mundo Libros'
           onadd={this.onAdd}
           onsearch={this.onSearch}
         />
-        <List 
+        <List
           items={this.state.copyBooks}//Así le mando mi arreglo de datos como una propiedad al componente List
           onupdaterating={this.onUpdateRating}
           onremove={this.onRemove}
