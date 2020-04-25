@@ -1,0 +1,26 @@
+.parrafo {
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 20px;
+  border-image: initial;
+  border-top: 3px solid black;
+  border-radius: 10px;
+}
+
+.tituloQS {
+  margin-left: 20px;
+  font-family: sans-serif;
+  color: darkred;
+}
+
+.linkedin {
+  margin-left: 20px;
+  margin-right: 5px;
+  font-size: 20px;
+  color: red;
+}
+.email {
+  margin-left: 5px;
+  font-size: 20px;
+  color: red;
+}

@@ -1,0 +1,7 @@
+.proyectoTitulo, .sobreMi {
+  font-weight: bold;
+}
+
+.queHaceres, .juegoDeMemoria, .libreria, .home {
+  text-indent: 1em;
+}

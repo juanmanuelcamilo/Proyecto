@@ -1,0 +1,9 @@
+/*Preguntar a Baut: agregar un borde a la App*/
+.todo-list {
+  margin-left: 20px;
+}
+
+.todo-item {
+  font-size: 25px;
+  text-align: center;
+}

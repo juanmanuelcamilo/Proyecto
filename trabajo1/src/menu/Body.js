@@ -6,24 +6,33 @@ import {
   Link
 } from "react-router-dom";
 
-import Home from "./homePrincipal/Home";
-import SimonDice from "./simon/SimonDice";
-import Calculadora from "./calcu/Calculadora";
+import QuienSoy from "./sobreMi/QuienSoy";
+import Quehaceres from "./quehaceres/Quehaceres";
+import JuegoDeMemoria from "./juegodememoria/JuegoDeMemoria";
+import Libreria from "./libreria/Libreria";
+
+import './bodyEstilos.css'
 
 export default function App() {
   return (
     <Router>
-      <div>
+      <div className = 'Links'>
         <nav>
           <ul>
+          <h4 className = 'sobreMi'>Sobre mi:</h4>
             <li>
-              <Link to="/homePrincipal/Home">Home</Link>
+              <Link to="/sobreMi/QuienSoy" className = 'home'><h5>Quién soy?</h5></Link>
+            </li>
+            <br/>
+            <h4 className = 'proyectoTitulo'>Proyectos personales:</h4>
+            <li>
+              <Link to="/quehaceres/Quehaceres" className = 'queHaceres'><h5>Quehaceres</h5></Link>
             </li>
             <li>
-              <Link to="/simon/SimonDice">Simón Dice</Link>
+              <Link to="/juegodememoria/JuegoDeMemoria" className = 'juegoDeMemoria'><h5>Juego de Memoria</h5></Link>
             </li>
             <li>
-              <Link to="/calcu/Calculadora">Calculadora</Link>
+              <Link to="/libreria/Libreria" className = 'libreria'><h5>Libreria</h5></Link>
             </li>
           </ul>
         </nav>
@@ -31,14 +40,17 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/calcu/Calculadora">
-            <Calculadora />
+          <Route path="/sobreMi/QuienSoy">
+            <QuienSoy />
           </Route>
-          <Route path="/simon/SimonDice">
-            <SimonDice />
+          <Route path="/quehaceres/Quehaceres">
+            <Quehaceres />
           </Route>
-          <Route path="/homePrincipal/Home">
-            <Home />
+          <Route path="/juegodememoria/JuegoDeMemoria">
+            <JuegoDeMemoria />
+          </Route>
+          <Route path="/libreria/Libreria">
+            <Libreria />
           </Route>
         </Switch>
       </div>
